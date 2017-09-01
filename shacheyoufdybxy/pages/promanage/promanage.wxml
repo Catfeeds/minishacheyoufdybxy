@@ -1,0 +1,21 @@
+<!--pages/promanage/promanage.wxml-->
+<view class="shop" wx:for="{{list}}"  wx:key="id">
+     <view class="fei">
+        <image src="{{item.photo_x}}"></image>
+     </view>
+     <view class="gongsi">
+         <view>{{item.name}}</view>  
+         <view> 价格：{{item.price_yh}}</view> 
+         <view> 人气：{{item.renqi}}/销量：{{item.shiyong}}</view>
+         <view> 产品编号：{{item.pro_number}}</view>     
+     </view>
+     <view class="jinru" bindtap="del" data-id="{{item.id}}">
+      <text>删除</text>  
+     </view>
+</view>
+<view class="clear mt10" bindtap="getMore" wx:if="{{list}}">点击查看更多</view>
+<view style="text-align:center;margin-top:300rpx;" wx:if="{{!list}}">你的店铺还没有产品哟！</view>
+
+<view class="lll">
+    <image src="../../images/kf.png"> <contact-button></contact-button>  <contact-button></contact-button></image>
+</view>
